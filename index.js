@@ -23,12 +23,16 @@
 					fetch( sSrc )
 					  .then(function( oResponse ) 
 					  {
-					    oInclude.innerHTML = oResponse.text()
+					    	return oResponse.text()
 					  })
+					  .then(function( sHTML )
+					  {
+					  	oInclude.innerHTML = sHTML
+					  });
 				}
 			}
 		}		
-		
+
 	}
 
 	oCore.init()
